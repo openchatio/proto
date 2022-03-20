@@ -5,16 +5,10 @@ plugins:
     opt:
       - paths=import
       - module=github.com/openchatio/proto/pkg
-      - Mproto/events/event.proto
-      - Mproto/events/headers.proto
-      - Mproto/events/new_message.proto
-      - Mproto/types/error_codes.proto
-      - Mproto/types/message.proto
-    strategy: all
-#  - name: go-grpc
-#    out: pkg
-#    opt:
-#      - paths=import
-#      - require_unimplemented_servers=false
-#      - module=github.com/openchatio/proto/pkg
+  - name: go-grpc
+    out: pkg
+    opt:
+      - paths=import
+      - require_unimplemented_servers=false
+      - module=github.com/openchatio/proto/pkg
 
