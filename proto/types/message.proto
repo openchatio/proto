@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package org.openchat.types;
+
+option go_package="github.com/openchatio/proto/pkg/types;types";
+
+message Message {
+  string text = 1;
+}

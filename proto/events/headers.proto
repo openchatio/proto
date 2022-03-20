@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package org.openchat.events;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package="github.com/openchatio/proto/pkg/events;events";
+
+
+// Headers for events
+// TODO: add channel
+message EventHeaders {
+  // Timestamp when event occurred
+  google.protobuf.Timestamp date = 1;
+
+  // Hash of event body
+  bytes hash = 2;
+
+  // Signature = sign(concat(hash, prev.hash))
+  bytes signature = 3;
+
+  // Height of event, just like blocks in blockchain
+  int64 height = 4;
+}

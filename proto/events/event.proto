@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package org.openchat.events;
+
+import "types/message.proto";
+import "events/headers.proto";
+import "events/new_message.proto";
+
+option go_package="github.com/openchatio/proto/pkg/events;events";
+
+
+message Event {
+  EventBody body = 1;
+  EventHeaders headers = 2;
+}
+
+message EventBody {
+  oneof body {
+    NewMessageEvent new_message = 1;
+  }
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package org.openchat.service;
+
+import "events/event.proto";
+import "types/error_codes.proto";
+
+option go_package="github.com/openchatio/proto/pkg/service;service";
+
+service OpenchatService {
+  rpc SendEvent(SendEventRequest) returns (SendEventResponse);
+}
+
+message SendEventRequest {
+  events.Event event = 1;
+}
+
+message SendEventResponse {
+  types.ErrorCodes code = 1;
+}

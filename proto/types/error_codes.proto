@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package org.openchat.types;
+
+option go_package="github.com/openchatio/proto/pkg/types;types";
+
+
+enum ErrorCodes {
+  Ok = 0;
+  InvalidSignature = 1;
+}

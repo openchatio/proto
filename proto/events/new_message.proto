@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package org.openchat.events;
+
+import "types/message.proto";
+
+option go_package="github.com/openchatio/proto/pkg/events;events";
+
+message NewMessageEvent {
+  org.openchat.types.Message message = 1;
+}
